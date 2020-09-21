@@ -1,5 +1,5 @@
 {
-  "name": "workflow-lib",
+  "name": "@wenex/workflow-lib",
   "version": "1.0.0",
   "description": "Workflow engine based on BPMNs. Designed for developers.",
   "main": "index.js",
