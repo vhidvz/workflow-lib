@@ -19,6 +19,7 @@
     "mode": "modules",
     "out": "docs"
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "test", "lib", "**/*spec.ts"]
+  "include": ["src", "example"],
+  "exclude": ["node_modules", "test", "lib", "**/*spec.ts"],
+  "paths": ["src", "example"]
 }

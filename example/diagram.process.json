@@ -1,0 +1,335 @@
+{
+  "_id": "Process_0fv5xgv",
+  "_isExecutable": true,
+  "laneSet": {
+    "_id": "LaneSet_1ckae51",
+    "lane": [
+      {
+        "_id": "Lane_1dwcohf",
+        "_name": "Sub2",
+        "flowNodeRef": [
+          "Event_1v4ijzq",
+          "Gateway_0rtiscd",
+          "Gateway_1lvlrqh",
+          "Activity_03h1qlo",
+          "Activity_0it81ke",
+          "Event_0ttjeni",
+          "Event_10jibmq",
+          "Gateway_1id6ox6",
+          "Event_0w9947m",
+          "Gateway_14jafx0",
+          "Activity_061c0bw"
+        ]
+      },
+      {
+        "_id": "Lane_1bxfkbt",
+        "_name": "Sub2",
+        "flowNodeRef": [
+          "Activity_0sl3hy7",
+          "Gateway_05pok0a",
+          "Activity_1ebkjlb",
+          "Gateway_0zpt8b8",
+          "Activity_1xgn53y",
+          "Activity_0tdyb1o",
+          "Gateway_0jup7ho",
+          "Activity_035fw0v",
+          "Event_0ig421z",
+          "Event_1rtmimw",
+          "Event_08kwqst",
+          "Event_04ew80z"
+        ]
+      }
+    ]
+  },
+  "startEvent": {
+    "_id": "Event_1v4ijzq",
+    "_name": "StartEvent",
+    "outgoing": "Flow_12t893f"
+  },
+  "parallelGateway": [
+    {
+      "_id": "Gateway_0rtiscd",
+      "_name": "Parallel1",
+      "incoming": "Flow_0iioway",
+      "outgoing": ["Flow_122dbol", "Flow_0mbrj9j"]
+    },
+    {
+      "_id": "Gateway_0zpt8b8",
+      "_name": "Parallel2",
+      "incoming": "Flow_18brgs5",
+      "outgoing": ["Flow_0zmtopq", "Flow_0p6k6g5"]
+    },
+    {
+      "_id": "Gateway_0jup7ho",
+      "_name": "Parallel3",
+      "incoming": ["Flow_19bzffn", "Flow_0htrhsn"],
+      "outgoing": "Flow_1tsb5z9"
+    }
+  ],
+  "exclusiveGateway": [
+    {
+      "_id": "Gateway_1lvlrqh",
+      "_name": "Xor1",
+      "incoming": "Flow_122dbol",
+      "outgoing": ["Flow_06g6pwh", "Flow_13g4exy"]
+    },
+    {
+      "_id": "Gateway_05pok0a",
+      "_name": "Xor4",
+      "incoming": ["Flow_029483p", "Flow_13g4exy"],
+      "outgoing": ["Flow_1fvlcdi", "Flow_18brgs5"]
+    },
+    {
+      "_id": "Gateway_1id6ox6",
+      "_name": "Xor2",
+      "incoming": ["Flow_1rvmgrz", "Flow_18w627u"],
+      "outgoing": "Flow_1cvnz4f"
+    },
+    {
+      "_id": "Gateway_14jafx0",
+      "_name": "Xor3",
+      "incoming": ["Flow_1tsb5z9", "Flow_0jzoni2"],
+      "outgoing": "Flow_15yhibm"
+    }
+  ],
+  "userTask": [
+    {
+      "_id": "Activity_03h1qlo",
+      "_name": "Task1",
+      "incoming": "Flow_12t893f",
+      "outgoing": "Flow_0iioway"
+    },
+    {
+      "_id": "Activity_0sl3hy7",
+      "_name": "Task4",
+      "incoming": ["Flow_0mbrj9j", "Flow_0qk0uj1"],
+      "outgoing": "Flow_029483p"
+    },
+    {
+      "_id": "Activity_1ebkjlb",
+      "_name": "Task6",
+      "incoming": "Flow_1fvlcdi"
+    },
+    {
+      "_id": "Activity_1xgn53y",
+      "_name": "Task7",
+      "incoming": "Flow_0p6k6g5",
+      "outgoing": "Flow_19bzffn"
+    },
+    {
+      "_id": "Activity_035fw0v",
+      "_name": "Task5",
+      "incoming": "Flow_1snnmv6",
+      "outgoing": "Flow_0web9m9"
+    },
+    {
+      "_id": "Activity_061c0bw",
+      "_name": "Task3",
+      "incoming": "Flow_1cvnz4f",
+      "outgoing": "Flow_0jzoni2"
+    }
+  ],
+  "serviceTask": {
+    "_id": "Activity_0it81ke",
+    "_name": "Task2",
+    "incoming": "Flow_06g6pwh",
+    "outgoing": "Flow_1czdn86"
+  },
+  "intermediateThrowEvent": [
+    {
+      "_id": "Event_0ttjeni",
+      "_name": "SendSignal1",
+      "incoming": "Flow_1czdn86",
+      "outgoing": "Flow_0ktd6g2",
+      "signalEventDefinition": {
+        "_id": "SignalEventDefinition_1u6qukw"
+      }
+    },
+    {
+      "_id": "Event_0ig421z",
+      "_name": "SendSignal2",
+      "incoming": "Flow_0web9m9",
+      "outgoing": "Flow_04j3d3e",
+      "signalEventDefinition": {
+        "_id": "SignalEventDefinition_164lvv6"
+      }
+    }
+  ],
+  "intermediateCatchEvent": [
+    {
+      "_id": "Event_10jibmq",
+      "_name": "ReceiveSignal1",
+      "incoming": "Flow_0ktd6g2",
+      "outgoing": "Flow_1rvmgrz",
+      "signalEventDefinition": {
+        "_id": "SignalEventDefinition_1kg8l5x"
+      }
+    },
+    {
+      "_id": "Event_1rtmimw",
+      "_name": "ReceiveSignal2",
+      "incoming": "Flow_04j3d3e",
+      "outgoing": "Flow_0qk0uj1",
+      "signalEventDefinition": {
+        "_id": "SignalEventDefinition_1sk7fkz"
+      }
+    }
+  ],
+  "manualTask": {
+    "_id": "Activity_0tdyb1o",
+    "_name": "Task8",
+    "incoming": "Flow_0zmtopq",
+    "outgoing": "Flow_0htrhsn"
+  },
+  "endEvent": {
+    "_id": "Event_0w9947m",
+    "_name": "End",
+    "incoming": "Flow_15yhibm"
+  },
+  "boundaryEvent": [
+    {
+      "_id": "Event_08kwqst",
+      "_name": "min5",
+      "_attachedToRef": "Activity_0sl3hy7",
+      "outgoing": "Flow_1snnmv6",
+      "timerEventDefinition": {
+        "_id": "TimerEventDefinition_1pkl7hi"
+      }
+    },
+    {
+      "_id": "Event_04ew80z",
+      "_attachedToRef": "Activity_1ebkjlb",
+      "outgoing": "Flow_18w627u",
+      "timerEventDefinition": {
+        "_id": "TimerEventDefinition_05izptz"
+      }
+    }
+  ],
+  "sequenceFlow": [
+    {
+      "_id": "Flow_12t893f",
+      "_sourceRef": "Event_1v4ijzq",
+      "_targetRef": "Activity_03h1qlo"
+    },
+    {
+      "_id": "Flow_0iioway",
+      "_sourceRef": "Activity_03h1qlo",
+      "_targetRef": "Gateway_0rtiscd"
+    },
+    {
+      "_id": "Flow_122dbol",
+      "_sourceRef": "Gateway_0rtiscd",
+      "_targetRef": "Gateway_1lvlrqh"
+    },
+    {
+      "_id": "Flow_0mbrj9j",
+      "_sourceRef": "Gateway_0rtiscd",
+      "_targetRef": "Activity_0sl3hy7"
+    },
+    {
+      "_id": "Flow_1snnmv6",
+      "_sourceRef": "Event_08kwqst",
+      "_targetRef": "Activity_035fw0v"
+    },
+    {
+      "_id": "Flow_029483p",
+      "_sourceRef": "Activity_0sl3hy7",
+      "_targetRef": "Gateway_05pok0a"
+    },
+    {
+      "_id": "Flow_06g6pwh",
+      "_sourceRef": "Gateway_1lvlrqh",
+      "_targetRef": "Activity_0it81ke"
+    },
+    {
+      "_id": "Flow_1czdn86",
+      "_sourceRef": "Activity_0it81ke",
+      "_targetRef": "Event_0ttjeni"
+    },
+    {
+      "_id": "Flow_0ktd6g2",
+      "_sourceRef": "Event_0ttjeni",
+      "_targetRef": "Event_10jibmq"
+    },
+    {
+      "_id": "Flow_1rvmgrz",
+      "_sourceRef": "Event_10jibmq",
+      "_targetRef": "Gateway_1id6ox6"
+    },
+    {
+      "_id": "Flow_0jzoni2",
+      "_sourceRef": "Activity_061c0bw",
+      "_targetRef": "Gateway_14jafx0"
+    },
+    {
+      "_id": "Flow_1cvnz4f",
+      "_sourceRef": "Gateway_1id6ox6",
+      "_targetRef": "Activity_061c0bw"
+    },
+    {
+      "_id": "Flow_1fvlcdi",
+      "_sourceRef": "Gateway_05pok0a",
+      "_targetRef": "Activity_1ebkjlb"
+    },
+    {
+      "_id": "Flow_18w627u",
+      "_sourceRef": "Event_04ew80z",
+      "_targetRef": "Gateway_1id6ox6"
+    },
+    {
+      "_id": "Flow_18brgs5",
+      "_sourceRef": "Gateway_05pok0a",
+      "_targetRef": "Gateway_0zpt8b8"
+    },
+    {
+      "_id": "Flow_0zmtopq",
+      "_sourceRef": "Gateway_0zpt8b8",
+      "_targetRef": "Activity_0tdyb1o"
+    },
+    {
+      "_id": "Flow_0p6k6g5",
+      "_sourceRef": "Gateway_0zpt8b8",
+      "_targetRef": "Activity_1xgn53y"
+    },
+    {
+      "_id": "Flow_19bzffn",
+      "_sourceRef": "Activity_1xgn53y",
+      "_targetRef": "Gateway_0jup7ho"
+    },
+    {
+      "_id": "Flow_0htrhsn",
+      "_sourceRef": "Activity_0tdyb1o",
+      "_targetRef": "Gateway_0jup7ho"
+    },
+    {
+      "_id": "Flow_1tsb5z9",
+      "_sourceRef": "Gateway_0jup7ho",
+      "_targetRef": "Gateway_14jafx0"
+    },
+    {
+      "_id": "Flow_0web9m9",
+      "_sourceRef": "Activity_035fw0v",
+      "_targetRef": "Event_0ig421z"
+    },
+    {
+      "_id": "Flow_04j3d3e",
+      "_sourceRef": "Event_0ig421z",
+      "_targetRef": "Event_1rtmimw"
+    },
+    {
+      "_id": "Flow_0qk0uj1",
+      "_sourceRef": "Event_1rtmimw",
+      "_targetRef": "Activity_0sl3hy7"
+    },
+    {
+      "_id": "Flow_15yhibm",
+      "_sourceRef": "Gateway_14jafx0",
+      "_targetRef": "Event_0w9947m"
+    },
+    {
+      "_id": "Flow_13g4exy",
+      "_sourceRef": "Gateway_1lvlrqh",
+      "_targetRef": "Gateway_05pok0a"
+    }
+  ]
+}
