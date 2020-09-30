@@ -6,7 +6,7 @@ Workflow engine based on BPMNs. Designed for developers.
 
 ## Example
 
-![diagram](./example/diagram.svg)
+![diagram](https://raw.githubusercontent.com/wenexo/workflow-lib/master/example/diagram.svg)
 
 Before use this xml diagram you should convert it to a plain json format.
 May you want to use [freeformatter](https://www.freeformatter.com/xml-to-json-converter.html), don't forget to change prefix to underline ( @ -> \_ ).

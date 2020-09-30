@@ -1,6 +1,6 @@
 {
   "name": "@wenex/workflow-lib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Workflow engine based on BPMNs. Designed for developers.",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "url": "git+https://github.com/wenexo/workflow-lib.git"
   },
   "keywords": [
-    "bpmn-engin",
+    "bpmn-engine",
     "workflow"
   ],
   "author": "Vahid V.",
