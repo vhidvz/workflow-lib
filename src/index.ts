@@ -365,17 +365,20 @@ export class BPMNEngine {
       switch (activity.category) {
         case BPMNActivityCategory.Event:
           result = await this._ExecuteEvent<T>(activity as BPMNEventActivity, callback, data);
+          break;
         case BPMNActivityCategory.Gateway:
           result = await this._ExecuteGateway<T>(activity as BPMNGatewayActivity, callback, data);
+          break;
         case BPMNActivityCategory.Task:
           result = await this._ExecuteTask<T>(activity as BPMNTaskActivity, callback, data);
+          break;
       }
 
       if (!this.history.head.length) {
         this.finish();
       }
 
-      await this.forward<T>(data);
+      await this.forward<T>(result);
       return result;
     }
   }
