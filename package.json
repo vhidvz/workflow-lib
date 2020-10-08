@@ -10,6 +10,7 @@
     "lint": "tslint -p tsconfig.json",
     "doc": "typedoc --out docs src",
     "prepare": "npm run build",
+    "debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register example/example.ts",
     "example": "node -r tsconfig-paths/register -r ts-node/register example/example.ts"
   },
   "repository": {

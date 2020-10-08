@@ -375,6 +375,7 @@ export class BPMNEngine {
         this.finish();
       }
 
+      await this.forward<T>(data);
       return result;
     }
   }
@@ -398,7 +399,6 @@ export class BPMNEngine {
       }
     }
 
-    await this.forward<T>(data);
     return result;
   }
 
@@ -421,7 +421,6 @@ export class BPMNEngine {
       }
     }
 
-    await this.forward<T>(data);
     return result;
   }
 
@@ -444,7 +443,6 @@ export class BPMNEngine {
       }
     }
 
-    await this.forward<T>(data);
     return result;
   }
 
