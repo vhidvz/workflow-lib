@@ -378,7 +378,7 @@ export class BPMNEngine {
         this.finish();
       }
 
-      await this.forward<T>(result);
+      await this.forward<T>(data);
       return result;
     }
   }
