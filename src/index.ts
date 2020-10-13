@@ -340,7 +340,7 @@ export class BPMNEngine {
   }
 
   public async execute<T>(activityId: string, callback: CallableFunction, data?: T): Promise<T> {
-    if (this.isFinished()) return;
+    if (this.isFinished()) return data;
     if (!this.isStarted()) {
       if (this.isInitialized()) {
         throw new BPMNException(`Please initialize the engine with build() and bind() methods.`);
@@ -378,6 +378,7 @@ export class BPMNEngine {
         this.finish();
       }
 
+      if (this.isFinished()) return data;
       await this.forward<T>(data);
       return result;
     }
